@@ -3,7 +3,7 @@
     "displayName": "Smithy",
     "description": "Smithy IDL syntax highlighting",
     "version": "0.3.0",
-    "publisher": "aws-smithy",
+    "publisher": "pepri",
     "engines": {
         "vscode": "^1.32.0"
     },

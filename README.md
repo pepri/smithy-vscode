@@ -9,21 +9,6 @@ bundle in TextMate and [IntelliJ using a third-party plugin](https://www.jetbrai
 This extension currently provides basic syntax highlighting of ".smithy"
 files.
 
-## Installation
-
-### VS Code
-
-This extension is not yet published, so you will need to install it manually
-by copying the contents of this repository into the `<user home>/.vscode/extensions`
-folder and restart Code.
-
-### IntelliJ
-
-You can use this extension in IntelliJ by installing the
-"TextMate bundle support" plugin and registering this repository as a bundle.
-See the [IntelliJ documentation](https://www.jetbrains.com/help/idea/textmate.html)
-for more details.
-
 ## Release Notes
 
 ### 0.3.0 - 2020-09-19
