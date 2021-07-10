@@ -1,0 +1,160 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Smithy",
+	"scopeName": "source.smithy",
+	"patterns": [
+		{ "include": "#comment" },
+		{ "include": "#object" },
+		{ "include": "#array" },
+		{ "include": "#delimiter" },
+		{ "include": "#string" },
+		{ "include": "#number" },
+		{ "include": "#trait" },
+		{ "include": "#keyword" },
+		{ "include": "#identifier" }
+	],
+	"repository": {
+		"comment": {
+			"patterns": [
+				{
+					"name": "comment.block.documentation.smithy",
+					"match": "///.*"
+				},
+				{
+					"name": "comment.line.smithy",
+					"match": "//.*"
+				}
+			]
+		},
+		"object": {
+			"name": "keyword.operator.smithy",
+			"begin": "{",
+			"end": "}",
+			"patterns": [
+				{ "include": "#pair" }
+			]
+		},
+		"array": {
+			"name": "keyword.operator.smithy",
+			"begin": "\\[",
+			"end": "]",
+			"patterns": [
+				{ "include": "#comment" },
+				{ "include": "#object" },
+				{ "include": "#array" },
+				{ "include": "#delimiter" },
+				{ "include": "#string" },
+				{ "include": "#number" },
+				{ "include": "#trait" },
+				{ "include": "#keyword" },
+				{ "include": "#identifier" }
+			]
+		},
+		"pair": {
+			"patterns": [
+				{
+					"name": "support.type.property-name.smithy",
+					"match": "[a-zA-Z0-9_.$#@]+:"
+				},
+				{ "include": "#comment" },
+				{ "include": "#object" },
+				{ "include": "#array" },
+				{ "include": "#delimiter" },
+				{ "include": "#string" },
+				{ "include": "#number" },
+				{ "include": "#trait" },
+				{ "include": "#keyword" },
+				{ "include": "#identifier" }
+			]
+		},
+		"delimiter": {
+			"patterns": [
+				{
+					"name": "keyword.operator.smithy",
+					"match": "[(){}\\[\\],:=]"
+				}
+			]
+		},
+		"string": {
+			"name": "string.quoted.double.smithy",
+			"begin": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.smithy"
+				}
+			},
+			"end": "(\")|((?:[^\\\\\n])$)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.string.end.smithy"
+				},
+				"2": {
+					"name": "invalid.illegal.newline.smithy"
+				}
+			},
+			"patterns": [
+				{
+					"name": "constant.character.escape.smithy",
+					"match": "\\\\(u[0-9A-Fa-f]{4}|.|$)"
+				}
+			]
+		},
+		"number": {
+			"patterns": [
+				{
+					"name": "constant.numeric.smithy",
+					"match": "-?[0-9]+(?:\\.[0-9]+)?(?:e[+\\-]?[0-9]+)?"
+				}
+			]
+		},
+		"trait": {
+			"patterns": [
+				{
+					"begin": "(@)([a-zA-Z0-9_.$#@]+)(\\()",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.annotation.smithy"
+						},
+						"2": {
+							"name": "storage.type.annotation.smithy"
+						},
+						"3": {
+							"name": "punctuation.definition.object.end.smithy"
+						}
+					},
+					"end": "\\)",
+					"patterns": [
+						{ "include": "#pair" }
+					]
+				},
+				{
+					"match": "(@)([a-zA-Z0-9_.$#@]+)",
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.annotation.smithy"
+						},
+						"2": {
+							"name": "storage.type.annotation.smithy"
+						}
+					}
+				}
+			]
+		},
+		"keyword": {
+			"patterns": [
+				{
+					"name": "keyword.statement.smithy",
+					"match": "(metadata|namespace|use|apply|list|set|map|structure|union|service|operation|resource|string|blob|boolean|document|byte|short|integer|long|float|double|bigInteger|bigDecimal|timestamp)"
+				}
+			]
+		},
+		"identifier": {
+			"patterns": [
+				{
+					"name": "entity.name.type.smithy",
+					"match": "[a-zA-Z0-9_.$#@]+"
+				}
+			]
+		}
+	}
+}

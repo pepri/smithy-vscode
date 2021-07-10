@@ -1,0 +1,17 @@
+{
+	"name": "lsp-smithy-server",
+	"description": "Implementation of Smithy language server in node.",
+	"version": "1.0.0",
+	"author": "Peter Prikryl",
+	"license": "MIT",
+	"engines": {
+		"node": "*"
+	},
+	"publisher": "pepri",
+	"repository": "https://github.com/pepri/smithy-vscode.git",
+	"dependencies": {
+		"vscode-languageserver": "^7.0.0",
+		"vscode-languageserver-textdocument": "^1.0.1"
+	},
+	"scripts": {}
+}

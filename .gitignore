@@ -1,8 +1,8 @@
+.*
+!.gitignore
+!.editorconfig
+!.eslintrc.json
+!.vscodeignore
 out
 node_modules
-.coverage/
-.vscode-test/
 *.vsix
-**/.DS_Store
-.idea
-telemetryCache

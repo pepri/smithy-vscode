@@ -1,25 +1,19 @@
 # Smithy for VS Code
 
-This package is a Visual Studio Code extension to recognize and highlight the
-Smithy interface definition language (IDL). It can also be used as a TextMate
-bundle in TextMate and [IntelliJ using a third-party plugin](https://www.jetbrains.com/help/idea/importing-textmate-bundles.html).
+Smithy support for Visual Studio Code.
 
 ## Features
 
-This extension currently provides basic syntax highlighting of ".smithy"
-files.
+- Syntax highlighting for `.smithy` files.
+- Syntax validation.
+- Go to definition for shapes.
 
-## Release Notes
+## For Developers
 
-### 0.3.0 - 2020-09-19
+### Packaging
 
-- Updated to work with Smithy 1.0 syntax.
-
-### 0.2.0 - 2019-06-26
-
-- Add support for use statements.
-- Add support for documentation comments.
-
-### 0.1.0
-
-Initial release for Smithy IDL syntax highlighting.
+~~~shell
+npm run package
+# verify that packaged .vsix file contains the required files only
+npm run publish
+~~~

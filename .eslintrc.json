@@ -1,0 +1,14 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"@typescript-eslint",
+		"import"
+	],
+	"rules": {
+		"import/no-cycle": ["error"],
+		"semi": ["error", "always"],
+		"quotes": ["error", "single", { "avoidEscape": true }],
+		"comma-dangle": ["error", "always-multiline"]
+	}
+}

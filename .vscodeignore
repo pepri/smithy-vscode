@@ -1,3 +1,8 @@
 .*
 .*/**
-vsc-extension-quickstart.md
+**/*.ts
+**/*.map
+src
+client
+server
+tsconfig.json
